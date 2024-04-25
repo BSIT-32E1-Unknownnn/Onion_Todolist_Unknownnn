@@ -2,7 +2,77 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<div class="text-center mb-4">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Always Remember you're enough and don't let the problem eat you!</p>
 </div>
+
+<div class="container">
+    <h2>Add your new Task</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control mb-2" id="taskInput" placeholder="Enter a new task...">
+                <input type="date" class="form-control mb-2" id="taskDate">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button id="addTaskButton" class="btn btn-success btn-sm px-3 py-2" style="font-family: Arial, sans-serif;">Add New</button>
+        </div>
+    </div>
+
+    <div id="todoListContainer" class="mt-4">
+        <h2>Your To-Do List:</h2>
+        <table id="todoList" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Tasks will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+        <script>
+            $(function () {
+                // Function to add a new task
+                function addTask(taskText, taskDate) {
+                    var row = $('<tr>');
+                    var taskCell = $('<td>').text(taskText);
+                    var dateCell = $('<td>').text(taskDate);
+                    var actionCell = $('<td>').text('Not yet done');
+                    var completeButton = $('<button>').text('Complete').addClass('btn btn-success btn-sm completeButton');
+                    var completeButtonCell = $('<td>').append(completeButton);
+                    row.append(taskCell).append(dateCell).append(actionCell).append(completeButtonCell);
+                    $('#todoList tbody').append(row);
+                }
+
+                // Function to mark a task as complete
+                function completeTask() {
+                    $(this).closest('tr').find('td:eq(2)').text('DONE');
+                    $(this).remove();
+                }
+
+                // Event listener for adding a new task
+                $('#addTaskButton').click(function () {
+                    var taskText = $('#taskInput').val().trim();
+                    var taskDate = $('#taskDate').val();
+                    if (taskText !== '') {
+                        addTask(taskText, taskDate);
+                        $('#taskInput').val('');
+                        $('#taskDate').val('');
+                    }
+                });
+
+                // Event listener for completing a task
+                $(document).on('click', '.completeButton', completeTask);
+            });
+        </script>
+        }
