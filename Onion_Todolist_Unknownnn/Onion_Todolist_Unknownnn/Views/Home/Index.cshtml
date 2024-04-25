@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Onion_Todolist_Unknownnn.Models.Todolist
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -10,14 +11,20 @@
 <div class="container">
     <h2>Add your New Task</h2>
 
-    <form action="" method="Post">
+    <form action="/home/index" method="Post">
         <div class="mb-3">
             <label for="Task" class="form-label">Task</label>
-            <input type="text" class="form-control" id="Task">
+            <input type="text" class="form-control" id="Task" placeholder="Enter Task.." asp-for="Task">
         </div>
         <div class="mb-3">
             <label for="Date" class="form-label">Date</label>
-            <input type="date" class="form-control" id="Date">
+            <input type="date" class="form-control" id="Date" asp-for="Date">
+        </div>
+        <div class="mb-3">
+        <select class="form-select" aria-label="Default select example" asp-for="Action">
+            <option value="Not Yet Done">Not Yet Done</option>
+            <option value="Completed">Completed</option>
+        </select>
         </div>
         <button id="addTaskButton" class="btn btn-success btn-sm px-3 py-2" style="font-family: Arial, sans-serif;">Add New Task</button>
     </form>

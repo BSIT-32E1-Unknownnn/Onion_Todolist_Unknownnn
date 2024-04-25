@@ -27,7 +27,12 @@ namespace Onion_Todolist_Unknownnn.Controllers
         [HttpPost]        
         public IActionResult Index(Todolist todolist)
         {
-            return View();
+            using (var db = new Database())
+            {
+                db.Add(todolist);
+                db.SaveChanges();
+            }
+                return View();
         }
     }
 }
