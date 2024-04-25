@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fXIBGnjGE9/cWe3nI1qL4raar2eNmK5SnRrUojx3hACQdE7xnDbpKTQTEtC+HM5HzN5rI+nmrpBxsBQNuZzZRw==",
+  "dgSpecHash": "WB2EOWCW+CBv8oJLNe+LKJP/X9W0GTiljCLeh7SddXG3rwKSAMvps7BGOdvyFiORiJu32/WsLbZKcGRVQecu+A==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn.csproj",
   "expectedPackageFiles": [
@@ -44,7 +44,6 @@
     "C:\\Users\\USER\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.6\\sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.6\\sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.118\\stub.system.data.sqlite.core.netstandard.1.0.118.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.codedom\\4.7.0\\system.codedom.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
@@ -56,9 +55,6 @@
     "C:\\Users\\USER\\.nuget\\packages\\system.composition.typedparts\\6.0.0\\system.composition.typedparts.6.0.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.data.sqlclient\\4.8.1\\system.data.sqlclient.4.8.1.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.data.sqlite\\1.0.118\\system.data.sqlite.1.0.118.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.data.sqlite.core\\1.0.118\\system.data.sqlite.core.1.0.118.nupkg.sha512",
-    "C:\\Users\\USER\\.nuget\\packages\\system.data.sqlite.ef6\\1.0.118\\system.data.sqlite.ef6.1.0.118.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",

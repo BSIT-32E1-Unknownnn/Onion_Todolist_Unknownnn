@@ -884,37 +884,6 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
-      "Stub.System.Data.SQLite.Core.NetStandard/1.0.118": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.1/System.Data.SQLite.dll": {
-            "related": ".dll.altconfig;.xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.1/System.Data.SQLite.dll": {
-            "related": ".dll.altconfig;.xml"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/linux-x64/native/SQLite.Interop.dll": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/osx-x64/native/SQLite.Interop.dll": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/win-x64/native/SQLite.Interop.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/SQLite.Interop.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
       "System.CodeDom/4.7.0": {
         "type": "package",
         "compile": {
@@ -1107,31 +1076,6 @@
             "assetType": "runtime",
             "rid": "win"
           }
-        }
-      },
-      "System.Data.SQLite/1.0.118": {
-        "type": "package",
-        "dependencies": {
-          "System.Data.SQLite.Core": "[1.0.118]",
-          "System.Data.SQLite.EF6": "[1.0.118]"
-        }
-      },
-      "System.Data.SQLite.Core/1.0.118": {
-        "type": "package",
-        "dependencies": {
-          "Stub.System.Data.SQLite.Core.NetStandard": "[1.0.118]"
-        }
-      },
-      "System.Data.SQLite.EF6/1.0.118": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "6.4.4"
-        },
-        "compile": {
-          "lib/netstandard2.1/System.Data.SQLite.EF6.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/System.Data.SQLite.EF6.dll": {}
         }
       },
       "System.Drawing.Common/4.7.0": {
@@ -2779,27 +2723,6 @@
         "sqlitepclraw.provider.e_sqlite3.nuspec"
       ]
     },
-    "Stub.System.Data.SQLite.Core.NetStandard/1.0.118": {
-      "sha512": "4TS8IZvDj0ud6utxfXI6zv9Ditk4U9Kt9KqLyAIQGcU3GXp5oGBHgGZifq+APcqRCayuN/MSE8t9ZZmygtU28A==",
-      "type": "package",
-      "path": "stub.system.data.sqlite.core.netstandard/1.0.118",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/System.Data.SQLite.dll",
-        "lib/netstandard2.0/System.Data.SQLite.dll.altconfig",
-        "lib/netstandard2.0/System.Data.SQLite.xml",
-        "lib/netstandard2.1/System.Data.SQLite.dll",
-        "lib/netstandard2.1/System.Data.SQLite.dll.altconfig",
-        "lib/netstandard2.1/System.Data.SQLite.xml",
-        "runtimes/linux-x64/native/SQLite.Interop.dll",
-        "runtimes/osx-x64/native/SQLite.Interop.dll",
-        "runtimes/win-x64/native/SQLite.Interop.dll",
-        "runtimes/win-x86/native/SQLite.Interop.dll",
-        "stub.system.data.sqlite.core.netstandard.1.0.118.nupkg.sha512",
-        "stub.system.data.sqlite.core.netstandard.nuspec"
-      ]
-    },
     "System.CodeDom/4.7.0": {
       "sha512": "Hs9pw/kmvH3lXaZ1LFKj3pLQsiGfj2xo3sxSzwiLlRL6UcMZUTeCfoJ9Udalvn3yq5dLlPEZzYegrTQ1/LhPOQ==",
       "type": "package",
@@ -3174,65 +3097,6 @@
         "system.data.sqlclient.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "System.Data.SQLite/1.0.118": {
-      "sha512": "lm+Qc7SxuMNl/HpyAbJhQng+snqUs38jaC+GvKoYm5/w+RCTspvM6aFvdWXn6+yhntJR8FnbPWZ7oi2K4UL2vQ==",
-      "type": "package",
-      "path": "system.data.sqlite/1.0.118",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "system.data.sqlite.1.0.118.nupkg.sha512",
-        "system.data.sqlite.nuspec"
-      ]
-    },
-    "System.Data.SQLite.Core/1.0.118": {
-      "sha512": "2V1PsfBeqWlZxF/VtB8lQKPfDBayCU8zD5Xc3Mq7cILOa2ZqpPDSwMP0fTfk1gtGSStSk//DxKiGy6zwCQs7Uw==",
-      "type": "package",
-      "path": "system.data.sqlite.core/1.0.118",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "system.data.sqlite.core.1.0.118.nupkg.sha512",
-        "system.data.sqlite.core.nuspec"
-      ]
-    },
-    "System.Data.SQLite.EF6/1.0.118": {
-      "sha512": "6OqO3OA8tej0BidxjYxutfR2HlodiYAA3qU4BtYe/wQdXJ75rumiAr9inYJaxFkwgGb8jW1qyFy953ZFyCOe8A==",
-      "type": "package",
-      "path": "system.data.sqlite.ef6/1.0.118",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "content/net40/app.config.install.xdt",
-        "content/net40/app.config.transform",
-        "content/net40/web.config.install.xdt",
-        "content/net40/web.config.transform",
-        "content/net45/app.config.install.xdt",
-        "content/net45/app.config.transform",
-        "content/net45/web.config.install.xdt",
-        "content/net45/web.config.transform",
-        "content/net451/app.config.install.xdt",
-        "content/net451/app.config.transform",
-        "content/net451/web.config.install.xdt",
-        "content/net451/web.config.transform",
-        "content/net46/app.config.install.xdt",
-        "content/net46/app.config.transform",
-        "content/net46/web.config.install.xdt",
-        "content/net46/web.config.transform",
-        "lib/net40/System.Data.SQLite.EF6.dll",
-        "lib/net45/System.Data.SQLite.EF6.dll",
-        "lib/net451/System.Data.SQLite.EF6.dll",
-        "lib/net46/System.Data.SQLite.EF6.dll",
-        "lib/netstandard2.1/System.Data.SQLite.EF6.dll",
-        "system.data.sqlite.ef6.1.0.118.nupkg.sha512",
-        "system.data.sqlite.ef6.nuspec",
-        "tools/net40/install.ps1",
-        "tools/net45/install.ps1",
-        "tools/net451/install.ps1",
-        "tools/net46/install.ps1"
       ]
     },
     "System.Drawing.Common/4.7.0": {
@@ -3740,8 +3604,7 @@
     "net8.0": [
       "EntityFramework >= 6.4.4",
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.4",
-      "Microsoft.EntityFrameworkCore.Tools >= 8.0.4",
-      "System.Data.SQLite >= 1.0.118"
+      "Microsoft.EntityFrameworkCore.Tools >= 8.0.4"
     ]
   },
   "packageFolders": {
@@ -3796,10 +3659,6 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.4, )"
-          },
-          "System.Data.SQLite": {
-            "target": "Package",
-            "version": "[1.0.118, )"
           }
         },
         "imports": [

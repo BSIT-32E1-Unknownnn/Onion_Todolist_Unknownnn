@@ -10,7 +10,7 @@ using Onion_Todolist_Unknownnn.Models;
 namespace Onion_Todolist_Unknownnn.Migrations
 {
     [DbContext(typeof(Database))]
-    [Migration("20240425124405_InitialCreate")]
+    [Migration("20240425131329_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

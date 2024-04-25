@@ -11,7 +11,7 @@ namespace Onion_Todolist_Unknownnn.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "List",
+                name: "TodoList",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
