@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hH/Kl0CnjTAq4X5051lf6+cekjFmjRHyv7bYVNHEKfU=",
+  "Hash": "M5DUlPU+nDX0mw3KdH27LwM/+CD+Z3inwvoqKuff/QY=",
   "Source": "Onion_Todolist_Unknownnn",
   "BasePath": "_content/Onion_Todolist_Unknownnn",
   "Mode": "Default",
@@ -55,12 +55,12 @@
       "OriginalItemSpec": "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Onion_Todolist_Unknownnn.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\wwwroot\\css\\sites.css",
       "SourceId": "Onion_Todolist_Unknownnn",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\wwwroot\\",
       "BasePath": "_content/Onion_Todolist_Unknownnn",
-      "RelativePath": "css/site.css",
+      "RelativePath": "css/sites.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -71,7 +71,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\site.css"
+      "OriginalItemSpec": "wwwroot\\css\\sites.css"
     },
     {
       "Identity": "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\wwwroot\\favicon.ico",

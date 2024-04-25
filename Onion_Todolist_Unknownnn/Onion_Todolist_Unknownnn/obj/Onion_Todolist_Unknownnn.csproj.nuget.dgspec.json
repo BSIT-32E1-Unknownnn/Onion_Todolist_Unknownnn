@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Desktop\\IT Projects\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn.csproj": {}
+    "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Desktop\\IT Projects\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn.csproj": {
+    "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\IT Projects\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn.csproj",
         "projectName": "Onion_Todolist_Unknownnn",
-        "projectPath": "C:\\Users\\USER\\Desktop\\IT Projects\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn.csproj",
+        "projectPath": "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\IT Projects\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\obj\\",
+        "outputPath": "C:\\Users\\USER\\Documents\\GitHub\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\Onion_Todolist_Unknownnn\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
