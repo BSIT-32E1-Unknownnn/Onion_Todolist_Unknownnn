@@ -7,6 +7,7 @@ namespace Onion_Todolist_Unknownnn.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private object db;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -52,6 +53,22 @@ namespace Onion_Todolist_Unknownnn.Controllers
                     // For example, you can return the same view with validation errors
                     return View(todolist);
                 }
+        }
+
+        [HttpPost]
+        public IActionResult UpdateAction(int id)
+        {
+            using (var db = new Database())
+            {
+                var task = db.TodoList.Find(id);
+                if (task != null)
+                {
+                    task.Action = "Completed";
+                    db.SaveChanges();
+                }
+            }
+            // Redirect to the Index action to refresh the list of tasks
+            return RedirectToAction(nameof(Index));
         }
     }
 }

@@ -11,20 +11,20 @@
 <div class="container">
     <h2>Add your New Task</h2>
 
-    <form action="/home/index" method="Post">
+    <form id="taskForm" action="/home/index" method="Post">
         <div class="mb-3">
             <label for="Task" class="form-label">Task</label>
-            <input type="text" class="form-control" id="Task" placeholder="Enter Task.." asp-for="Task">
+            <input type="text" class="form-control" id="Task" name="Task" placeholder="Enter Task.." asp-for="Task">
         </div>
         <div class="mb-3">
             <label for="Date" class="form-label">Date</label>
-            <input type="date" class="form-control" id="Date" asp-for="Date">
+            <input type="date" class="form-control" id="Date" name="Date" asp-for="Date">
         </div>
         <div class="mb-3">
-        <select class="form-select" aria-label="Default select example" asp-for="Action">
-            <option value="Not Yet Done">Not Yet Done</option>
-            <option value="Completed">Completed</option>
-        </select>
+            <select class="form-select" aria-label="Default select example" id="Action" name="Action" asp-for="Action">
+                <option value="Not Yet Done">Not Yet Done</option>
+                <option value="Completed">Completed</option>
+            </select>
         </div>
         <button id="addTaskButton" class="btn btn-success btn-sm px-3 py-2" style="font-family: Arial, sans-serif;">Add New Task</button>
     </form>
@@ -43,12 +43,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach(var todolist in ViewBag.Todolist)
+                        @foreach (var todolist in ViewBag.Todolist)
                         {
                             <tr>
                                 <td>@todolist.Task</td>
                                 <td>@todolist.Date</td>
                                 <td>@todolist.Action</td>
+                                <td>
+                                    @if (todolist.Action != "Completed")
+                                    {
+                                        <form asp-action="UpdateAction" asp-controller="Home" method="post">
+                                            <input type="hidden" name="id" value="@todolist.Id" />
+                                            <button type="submit" class="btn btn-success">Completed</button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <button type="button" class="btn btn-success" disabled>Completed</button>
+                                    }
+                                </td>
                             </tr>
                         }
                     </tbody>
@@ -56,4 +69,4 @@
             </div>
         }
     </div>
-    </div>
+</div>
