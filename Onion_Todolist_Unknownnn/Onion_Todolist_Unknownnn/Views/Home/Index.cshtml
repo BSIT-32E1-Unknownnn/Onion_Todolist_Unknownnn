@@ -8,19 +8,19 @@
 </div>
 
 <div class="container">
-    <h2>Add your new Task</h2>
+    <h2>Add your New Task</h2>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <input type="text" class="form-control mb-2" id="taskInput" placeholder="Enter a new task...">
-                <input type="date" class="form-control mb-2" id="taskDate">
-            </div>
+    <form>
+        <div class="mb-3">
+            <label for="Task" class="form-label">Task</label>
+            <input type="text" class="form-control" id="Task">
         </div>
-        <div class="col-md-2">
-            <button id="addTaskButton" class="btn btn-success btn-sm px-3 py-2" style="font-family: Arial, sans-serif;">Add New Task</button>
+        <div class="mb-3">
+            <label for="Date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="Date">
         </div>
-    </div>
+        <button id="addTaskButton" class="btn btn-success btn-sm px-3 py-2" style="font-family: Arial, sans-serif;">Add New Task</button>
+    </form>
 
     <div id="todoListContainer" class="mt-4">
         <h2>My To-Do List:</h2>
