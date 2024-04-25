@@ -7,6 +7,7 @@ namespace Onion_Todolist_Unknownnn.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private object db;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -15,6 +16,13 @@ namespace Onion_Todolist_Unknownnn.Controllers
 
         public IActionResult Index()
         {
+            List<Todolist> todolists = new List<Todolist>();
+            using (var db = new Database())
+            {
+                todolists = db.TodoList.ToList();
+            }
+
+            ViewBag.Todolist = todolists;
             return View();
         }
 
@@ -22,6 +30,45 @@ namespace Onion_Todolist_Unknownnn.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public IActionResult Index(Todolist todolist)
+        {
+            using (var db = new Database())
+                if (ModelState.IsValid)
+                {
+                    db.Add(todolist);
+                    db.SaveChanges();
+
+                    // Refresh the list of tasks after adding the new task
+                    var updatedTodolist = db.TodoList.ToList();
+                    ViewBag.Todolist = updatedTodolist;
+
+                    return View();
+                }
+                else
+                {
+                    // Handle validation errors
+                    // For example, you can return the same view with validation errors
+                    return View(todolist);
+                }
+        }
+
+        [HttpPost]
+        public IActionResult UpdateAction(int id)
+        {
+            using (var db = new Database())
+            {
+                var task = db.TodoList.Find(id);
+                if (task != null)
+                {
+                    task.Action = "Completed";
+                    db.SaveChanges();
+                }
+            }
+            // Redirect to the Index action to refresh the list of tasks
+            return RedirectToAction(nameof(Index));
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Onion_Todolist_Unknownnn.Models.Todolist
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -8,33 +9,64 @@
 </div>
 
 <div class="container">
-    <h2>Add your new Task</h2>
+    <h2>Add your New Task</h2>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group">
-                <input type="text" class="form-control mb-2" id="taskInput" placeholder="Enter a new task...">
-                <input type="date" class="form-control mb-2" id="taskDate">
+    <form id="taskForm" action="/home/index" method="Post">
+        <div class="mb-3">
+            <label for="Task" class="form-label">Task</label>
+            <input type="text" class="form-control" id="Task" name="Task" placeholder="Enter Task.." asp-for="Task">
+        </div>
+        <div class="mb-3">
+            <label for="Date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="Date" name="Date" asp-for="Date">
+        </div>
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" id="Action" name="Action" asp-for="Action">
+                <option value="Not Yet Done">Not Yet Done</option>
+                <option value="Completed">Completed</option>
+            </select>
+        </div>
+        <button id="addTaskButton" class="btn btn-success btn-sm px-3 py-2" style="font-family: Arial, sans-serif;">Add New Task</button>
+    </form>
+
+    <div class="container">
+        @if (ViewBag.Todolist != null && ViewBag.Todolist.Count >= 1)
+        {
+            <div id="todoListContainer" class="mt-4">
+                <h2>My To-Do List:</h2>
+                <table id="todoList" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Task</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var todolist in ViewBag.Todolist)
+                        {
+                            <tr>
+                                <td>@todolist.Task</td>
+                                <td>@todolist.Date</td>
+                                <td>@todolist.Action</td>
+                                <td>
+                                    @if (todolist.Action != "Completed")
+                                    {
+                                        <form asp-action="UpdateAction" asp-controller="Home" method="post">
+                                            <input type="hidden" name="id" value="@todolist.Id" />
+                                            <button type="submit" class="btn btn-success">Completed</button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <button type="button" class="btn btn-success" disabled>Completed</button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
             </div>
-        </div>
-        <div class="col-md-2">
-            <button id="addTaskButton" class="btn btn-success btn-sm px-3 py-2" style="font-family: Arial, sans-serif;">Add New Task</button>
-        </div>
-    </div>
-
-    <div id="todoListContainer" class="mt-4">
-        <h2>My To-Do List:</h2>
-        <table id="todoList" class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Task</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Tasks will be dynamically added here -->
-            </tbody>
-        </table>
+        }
     </div>
 </div>
