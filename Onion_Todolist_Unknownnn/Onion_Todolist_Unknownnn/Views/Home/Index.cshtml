@@ -29,19 +29,31 @@
         <button id="addTaskButton" class="btn btn-success btn-sm px-3 py-2" style="font-family: Arial, sans-serif;">Add New Task</button>
     </form>
 
-    <div id="todoListContainer" class="mt-4">
-        <h2>My To-Do List:</h2>
-        <table id="todoList" class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Task</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Tasks will be dynamically added here -->
-            </tbody>
-        </table>
+    <div class="container">
+        @if (ViewBag.Todolist != null && ViewBag.Todolist.Count >= 1)
+        {
+            <div id="todoListContainer" class="mt-4">
+                <h2>My To-Do List:</h2>
+                <table id="todoList" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Task</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var todolist in ViewBag.Todolist)
+                        {
+                            <tr>
+                                <td>@todolist.Task</td>
+                                <td>@todolist.Date</td>
+                                <td>@todolist.Action</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
     </div>
-</div>
+    </div>
