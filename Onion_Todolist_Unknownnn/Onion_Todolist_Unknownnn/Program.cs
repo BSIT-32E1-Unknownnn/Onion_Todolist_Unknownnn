@@ -1,4 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Onion_Todolist_Unknownnn.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,9 +13,11 @@ builder.Services.AddControllersWithViews();
 // Load the configuration from appsettings.json
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 // Configure DbContext
 builder.Services.AddDbContext<Database>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(connectionString));
 
 var app = builder.Build();
 

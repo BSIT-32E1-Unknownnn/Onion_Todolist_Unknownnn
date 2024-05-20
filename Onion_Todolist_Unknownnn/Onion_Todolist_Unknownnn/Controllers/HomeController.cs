@@ -1,26 +1,27 @@
 using Microsoft.AspNetCore.Mvc;
 using Onion_Todolist_Unknownnn.Models;
+using Microsoft.Extensions.Logging; // Add this namespace for ILogger
 using System.Diagnostics;
+using System.Collections.Generic; // Add this namespace for List<T>
 
 namespace Onion_Todolist_Unknownnn.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private object db;
+        private readonly Database _db; // Change 'object db' to 'Database _db'
 
-        public HomeController(ILogger<HomeController> logger)
+        // Modify the constructor to inject the Database context
+        public HomeController(ILogger<HomeController> logger, Database db)
         {
             _logger = logger;
+            _db = db; // Assign the injected Database context to the private field
         }
 
         public IActionResult Index()
         {
             List<Todolist> todolists = new List<Todolist>();
-            using (var db = new Database())
-            {
-                todolists = db.TodoList.ToList();
-            }
+            todolists = _db.TodoList.ToList(); // Use the injected Database context
 
             ViewBag.Todolist = todolists;
             return View();
@@ -35,38 +36,35 @@ namespace Onion_Todolist_Unknownnn.Controllers
         [HttpPost]
         public IActionResult Index(Todolist todolist)
         {
-            using (var db = new Database())
-                if (ModelState.IsValid)
-                {
-                    db.Add(todolist);
-                    db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _db.Add(todolist);
+                _db.SaveChanges();
 
-                    // Refresh the list of tasks after adding the new task
-                    var updatedTodolist = db.TodoList.ToList();
-                    ViewBag.Todolist = updatedTodolist;
+                // Refresh the list of tasks after adding the new task
+                var updatedTodolist = _db.TodoList.ToList();
+                ViewBag.Todolist = updatedTodolist;
 
-                    return View();
-                }
-                else
-                {
-                    // Handle validation errors
-                    // For example, you can return the same view with validation errors
-                    return View(todolist);
-                }
+                return View();
+            }
+            else
+            {
+                // Handle validation errors
+                // For example, you can return the same view with validation errors
+                return View(todolist);
+            }
         }
 
         [HttpPost]
         public IActionResult UpdateAction(int id)
         {
-            using (var db = new Database())
+            var task = _db.TodoList.Find(id);
+            if (task != null)
             {
-                var task = db.TodoList.Find(id);
-                if (task != null)
-                {
-                    task.Action = "Completed";
-                    db.SaveChanges();
-                }
+                task.Action = "Completed";
+                _db.SaveChanges();
             }
+
             // Redirect to the Index action to refresh the list of tasks
             return RedirectToAction(nameof(Index));
         }
