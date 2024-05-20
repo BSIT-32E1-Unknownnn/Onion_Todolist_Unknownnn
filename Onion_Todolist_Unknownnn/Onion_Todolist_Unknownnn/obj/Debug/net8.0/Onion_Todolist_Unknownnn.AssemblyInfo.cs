@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Onion_Todolist_Unknownnn")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f76ffb213323c31057b280822803042b3ba909a2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63132c7ae702fb6afcffad701c1d733b71517566")]
 [assembly: System.Reflection.AssemblyProductAttribute("Onion_Todolist_Unknownnn")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Onion_Todolist_Unknownnn")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
