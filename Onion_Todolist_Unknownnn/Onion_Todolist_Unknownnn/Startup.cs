@@ -17,7 +17,7 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddDbContext<Database>(options =>
+        services.AddDbContext<DatabaseContext>(options =>
             options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
         services.AddControllersWithViews();
