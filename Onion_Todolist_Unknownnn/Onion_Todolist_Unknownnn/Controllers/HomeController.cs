@@ -1,18 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
 using Onion_Todolist_Unknownnn.Models;
-using Microsoft.Extensions.Logging; // Add this namespace for ILogger
+using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using System.Collections.Generic; // Add this namespace for List<T>
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore; // Add this namespace for DbContext
 
 namespace Onion_Todolist_Unknownnn.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly Database _db; // Change 'object db' to 'Database _db'
+        private readonly DatabaseContext _db; // Change 'Database' to 'DatabaseContext'
 
         // Modify the constructor to inject the Database context
-        public HomeController(ILogger<HomeController> logger, Database db)
+        public HomeController(ILogger<HomeController> logger, DatabaseContext db)
         {
             _logger = logger;
             _db = db; // Assign the injected Database context to the private field
@@ -20,11 +21,18 @@ namespace Onion_Todolist_Unknownnn.Controllers
 
         public IActionResult Index()
         {
-            List<Todolist> todolists = new List<Todolist>();
-            todolists = _db.TodoList.ToList(); // Use the injected Database context
+            try
+            {
+                List<Todolist> todolists = _db.TodoList.ToList(); // Use the injected Database context
 
-            ViewBag.Todolist = todolists;
-            return View();
+                ViewBag.Todolist = todolists;
+                return View();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving todolists");
+                return RedirectToAction(nameof(Error));
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -38,14 +46,22 @@ namespace Onion_Todolist_Unknownnn.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Add(todolist);
-                _db.SaveChanges();
+                try
+                {
+                    _db.Add(todolist);
+                    _db.SaveChanges();
 
-                // Refresh the list of tasks after adding the new task
-                var updatedTodolist = _db.TodoList.ToList();
-                ViewBag.Todolist = updatedTodolist;
+                    // Refresh the list of tasks after adding the new task
+                    var updatedTodolist = _db.TodoList.ToList();
+                    ViewBag.Todolist = updatedTodolist;
 
-                return View();
+                    return View();
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error adding todolist");
+                    return RedirectToAction(nameof(Error));
+                }
             }
             else
             {
@@ -58,15 +74,23 @@ namespace Onion_Todolist_Unknownnn.Controllers
         [HttpPost]
         public IActionResult UpdateAction(int id)
         {
-            var task = _db.TodoList.Find(id);
-            if (task != null)
+            try
             {
-                task.Action = "Completed";
-                _db.SaveChanges();
-            }
+                var task = _db.TodoList.Find(id);
+                if (task != null)
+                {
+                    task.Action = "Completed";
+                    _db.SaveChanges();
+                }
 
-            // Redirect to the Index action to refresh the list of tasks
-            return RedirectToAction(nameof(Index));
+                // Redirect to the Index action to refresh the list of tasks
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating todolist");
+                return RedirectToAction(nameof(Error));
+            }
         }
     }
 }

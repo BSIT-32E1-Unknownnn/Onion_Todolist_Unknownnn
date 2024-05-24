@@ -16,7 +16,7 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnC
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Configure DbContext
-builder.Services.AddDbContext<Database>(options =>
+builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlite(connectionString));
 
 var app = builder.Build();

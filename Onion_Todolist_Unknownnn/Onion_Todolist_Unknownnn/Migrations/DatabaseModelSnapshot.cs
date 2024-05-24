@@ -8,7 +8,7 @@ using Onion_Todolist_Unknownnn.Models;
 
 namespace Onion_Todolist_Unknownnn.Migrations
 {
-    [DbContext(typeof(Database))]
+    [DbContext(typeof(DatabaseContext))]
     partial class DatabaseModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
